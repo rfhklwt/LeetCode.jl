@@ -103,7 +103,7 @@ using DataStructures
 
 function avoid_flood(rains::Vector{Int})::Vector{Int}
     n = length(rains)
-    options = [1 for _ = 1:n]
+    options = [1 for _ in 1:n]
     seen = Dict{Int,Int}()
     dry_days = Vector{Int}()
 
