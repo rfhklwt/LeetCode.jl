@@ -1,4 +1,4 @@
-@testset "1488.avoid-flood-in-the-city.jl" begin
+@testset "1178.number-of-valid-words-for-each-puzzle.jl" begin
     @test find_num_of_valid_words(
         ["aaaa", "asas", "able", "ability", "actt", "actor", "access"],
         ["aboveyz", "abrodyz", "abslute", "absoryz", "actresz", "gaswxyz"],
