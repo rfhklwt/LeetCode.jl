@@ -60,5 +60,5 @@ function is_ugly(n::Int)::Bool
 
     return n == 1
 end
-    
+
 ## @lc code=end

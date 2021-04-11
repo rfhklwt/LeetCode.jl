@@ -34,7 +34,7 @@ using LeetCode
 function nth_ugly_number(n::Int)::Int
     dp = fill(1, n)
     a = b = c = 1
-    for i in 2: n
+    for i in 2:n
         n2, n3, n5 = 2dp[a], 3dp[b], 5dp[c]
         dp[i] = min(n2, n3, n5)
         (dp[i] == n2) && (a += 1)
