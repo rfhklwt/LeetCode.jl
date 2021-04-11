@@ -1,8 +1,8 @@
 # ---
 # title: 263. Ugly Number
 # id: problem263
-# author: Tian Jun
-# date: 2020-10-31
+# author: Qling 
+# date: 2021-04-11
 # difficulty: Easy
 # categories: Math
 # link: <https://leetcode.com/problems/ugly-number/description/>
@@ -49,5 +49,17 @@
 ## @lc code=start
 using LeetCode
 
-## add your code here:
+function is_ugly(n::Int)::Bool
+    (n <= 0) && return false
+
+    for factor in [2, 3, 5]
+        while n % factor == 0
+            n = n ÷ factor
+        end
+    end
+
+    return n == 1
+end
+    
+end
 ## @lc code=end

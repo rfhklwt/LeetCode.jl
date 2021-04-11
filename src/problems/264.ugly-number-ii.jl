@@ -1,8 +1,8 @@
 # ---
 # title: 264. Ugly Number II
 # id: problem264
-# author: Tian Jun
-# date: 2020-10-31
+# author: Qling
+# date: 2021-04-11
 # difficulty: Medium
 # categories: Math, Dynamic Programming, Heap
 # link: <https://leetcode.com/problems/ugly-number-ii/description/>
@@ -31,5 +31,17 @@
 ## @lc code=start
 using LeetCode
 
-## add your code here:
+function nth_ugly_number(n::Int)::Int
+    dp = fill(1, n)
+    a = b = c = 0
+    for i in 2: n
+        n2, n3, n5 = 2dp[a], 3dp[b], 5dp[c]
+        dp[i] = min(n2, n3, n5)
+        (dp[i] == n2) && (a += 1)
+        (dp[i] == n3) && (b += 1)
+        (dp[i] == n5) && (c += 1)
+    end
+
+    return dp[end]
+end
 ## @lc code=end
